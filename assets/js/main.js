@@ -246,7 +246,25 @@
         reiniciarAutoPlay();
       });
 
-    iniciarAutoPlay();
+    // Autoplay só roda com o carrossel visível: senão o scrollIntoView do
+    // avanço automático puxa a página inteira até aqui enquanto o usuário lê outra seção.
+    if ("IntersectionObserver" in window) {
+      const observadorPagina = new IntersectionObserver(
+        (entradas) => {
+          entradas.forEach((entrada) => {
+            if (entrada.isIntersecting) {
+              reiniciarAutoPlay();
+            } else {
+              pararAutoPlay();
+            }
+          });
+        },
+        { threshold: 0.5 }
+      );
+      observadorPagina.observe(raiz);
+    } else {
+      iniciarAutoPlay();
+    }
 
     trilho.addEventListener("mouseenter", pararAutoPlay);
     trilho.addEventListener("mouseleave", retomarAutoPlay);
