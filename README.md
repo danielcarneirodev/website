@@ -18,7 +18,7 @@ O Dev Raro aplica o **Método NORT 90**: um plano estruturado em até 90 dias,
 com acompanhamento individual comigo por 6 meses, para quem está perdido entre
 tutoriais e não sabe por onde começar. O foco é um só — a primeira vaga.
 
-Saiba mais em [danielcarneiro.dev](https://danielcarneiro.dev).
+Saiba mais em [danielcarneiro.dev](https://danielcarneirodev.github.io/website/).
 
 ## Contato
 
