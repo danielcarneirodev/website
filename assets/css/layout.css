@@ -1,0 +1,216 @@
+@layer layout {
+  .container {
+    width: min(100% - 2 * var(--sp-5), var(--largura-conteudo));
+    margin-inline: auto;
+  }
+
+  .container--estreito {
+    max-width: var(--largura-estreita);
+  }
+
+  /* --- Cabeçalho fixo --- */
+  .cabecalho {
+    position: sticky;
+    inset-block-start: 0;
+    z-index: 50;
+    background-color: rgb(8 11 16 / 72%);
+    backdrop-filter: blur(14px);
+    border-block-end: 1px solid transparent;
+    transition: border-color var(--transicao), background-color var(--transicao);
+  }
+
+  .cabecalho--rolado {
+    border-block-end-color: var(--cor-borda);
+    background-color: rgb(8 11 16 / 92%);
+  }
+
+  .cabecalho__interno {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--sp-4);
+    min-height: var(--altura-cabecalho);
+  }
+
+  /* --- Seções --- */
+  .secao {
+    padding-block: clamp(var(--sp-8), 8vw, var(--sp-10));
+  }
+
+  .secao--alt {
+    background-color: var(--cor-fundo-alt);
+    border-block: var(--borda-sutil);
+  }
+
+  .secao__cabecalho {
+    max-width: 46rem;
+    margin-block-end: var(--sp-7);
+    display: grid;
+    gap: var(--sp-4);
+  }
+
+  /* --- Grades --- */
+  .grade {
+    display: grid;
+    gap: var(--sp-5);
+  }
+
+  @media (min-width: 40em) {
+    .grade--3,
+    .grade--4 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 64em) {
+    .grade--3 {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .grade--4 {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  /* --- Hero --- */
+  .hero {
+    position: relative;
+    padding-block: clamp(var(--sp-8), 9vw, var(--sp-10));
+    background-image: var(--brilho-marca);
+  }
+
+  .hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background-image: linear-gradient(
+        to right,
+        rgb(255 255 255 / 3%) 1px,
+        transparent 1px
+      ),
+      linear-gradient(to bottom, rgb(255 255 255 / 3%) 1px, transparent 1px);
+    background-size: 72px 72px;
+    mask-image: radial-gradient(70% 60% at 50% 20%, #000 0%, transparent 100%);
+    pointer-events: none;
+  }
+
+  .hero__grade {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    gap: var(--sp-7);
+    align-items: center;
+  }
+
+  @media (min-width: 64em) {
+    .hero__grade {
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: var(--sp-8);
+    }
+  }
+
+  /* --- Comparativo antes/depois --- */
+  .comparativo {
+    display: grid;
+    gap: var(--sp-5);
+  }
+
+  @media (min-width: 48em) {
+    .comparativo {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  /* --- Mentor --- */
+  .mentor {
+    display: grid;
+    gap: var(--sp-7);
+    align-items: start;
+  }
+
+  @media (min-width: 56em) {
+    .mentor {
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: var(--sp-8);
+    }
+  }
+
+  .mentor__texto {
+    display: grid;
+    gap: var(--sp-4);
+  }
+
+  /* --- Oferta --- */
+  .oferta {
+    display: grid;
+    gap: var(--sp-6);
+    padding: clamp(var(--sp-5), 4vw, var(--sp-7));
+    background-color: var(--cor-superficie);
+    border: var(--borda-sutil);
+    border-radius: var(--raio-lg);
+    box-shadow: var(--sombra-lg);
+  }
+
+  @media (min-width: 56em) {
+    .oferta {
+      grid-template-columns: 1.1fr 0.9fr;
+      align-items: center;
+    }
+  }
+
+  /* --- Inscrição --- */
+  .secao--inscricao {
+    background-image: var(--brilho-marca);
+    border-block-start: var(--borda-sutil);
+  }
+
+  .inscricao {
+    display: grid;
+    gap: var(--sp-7);
+    align-items: start;
+  }
+
+  @media (min-width: 56em) {
+    .inscricao {
+      grid-template-columns: 1fr 1fr;
+      gap: var(--sp-8);
+    }
+  }
+
+  .inscricao__texto {
+    display: grid;
+    gap: var(--sp-4);
+  }
+
+  /* --- Rodapé --- */
+  .rodape {
+    padding-block: var(--sp-7) var(--sp-5);
+    background-color: var(--cor-fundo-alt);
+    border-block-start: var(--borda-sutil);
+  }
+
+  .rodape__interno {
+    display: grid;
+    gap: var(--sp-6);
+    padding-block-end: var(--sp-6);
+  }
+
+  @media (min-width: 48em) {
+    .rodape__interno {
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: var(--sp-7);
+    }
+  }
+
+  .rodape__base {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: var(--sp-3);
+    padding-block-start: var(--sp-5);
+    border-block-start: var(--borda-sutil);
+    color: var(--cor-texto-fraco);
+    font-size: var(--fs-300);
+  }
+}

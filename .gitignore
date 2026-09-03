@@ -1,0 +1,27 @@
+# Este repositório é público — mantenha aqui somente o código
+# e os arquivos necessários para o GitHub Pages servir o site.
+
+# Ferramentas internas do Copilot (skills contêm o método/posicionamento
+# da mentoria e não devem ser expostas publicamente)
+.github/
+
+# Configurações de editor/IDE
+.vscode/
+.idea/
+*.code-workspace
+
+# Arquivos de sistema operacional
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+npm-debug.log*
+
+# Variáveis de ambiente / segredos
+.env
+.env.*
+
+# Dependências (caso ferramentas de build sejam adicionadas no futuro)
+node_modules/

@@ -1,0 +1,75 @@
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-block-start: calc(var(--altura-cabecalho) + var(--sp-4));
+  }
+
+  body {
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    font-family: var(--fonte-corpo);
+    font-size: var(--fs-400);
+    line-height: var(--altura-linha);
+    overflow-x: hidden;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--fonte-titulo);
+    font-weight: var(--peso-titulo);
+    line-height: var(--altura-linha-titulo);
+    letter-spacing: -0.02em;
+  }
+
+  h1 {
+    font-size: var(--fs-900);
+  }
+
+  h2 {
+    font-size: var(--fs-800);
+  }
+
+  h3 {
+    font-size: var(--fs-600);
+  }
+
+  p {
+    max-width: var(--largura-texto);
+  }
+
+  strong {
+    font-weight: var(--peso-forte);
+    color: var(--cor-texto);
+  }
+
+  small {
+    font-size: var(--fs-300);
+  }
+
+  a:not([class]) {
+    color: var(--cor-marca);
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+    transition: color var(--transicao);
+  }
+
+  a:not([class]):hover {
+    color: var(--cor-marca-clara);
+  }
+
+  :focus-visible {
+    outline: 3px solid var(--cor-marca);
+    outline-offset: 3px;
+    border-radius: var(--raio-sm);
+  }
+
+  ::selection {
+    background-color: var(--cor-marca);
+    color: var(--cor-marca-contraste);
+  }
+
+  ::placeholder {
+    color: var(--cor-texto-fraco);
+  }
+}
