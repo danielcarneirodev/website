@@ -2,6 +2,12 @@
   html {
     scroll-behavior: smooth;
     scroll-padding-block-start: calc(var(--altura-cabecalho) + var(--sp-4));
+    scrollbar-width: none; /* Firefox: barra de rolagem oculta */
+    -ms-overflow-style: none; /* Edge legado */
+  }
+
+  html::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Edge Chromium */
   }
 
   body {

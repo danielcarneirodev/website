@@ -963,4 +963,86 @@
       transform: translateY(100%);
     }
   }
+
+  /* ---------- Card compacto (ícone + 1 linha) ---------- */
+  .cartao--compacto {
+    display: flex;
+    align-items: center;
+    gap: var(--sp-3);
+    padding: var(--sp-4);
+  }
+
+  .cartao__icone {
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+    inline-size: 2.5rem;
+    block-size: 2.5rem;
+    border-radius: var(--raio-md);
+    border: 1px solid rgb(34 197 94 / 35%);
+    background-color: rgb(34 197 94 / 10%);
+    color: var(--cor-marca);
+  }
+
+  .cartao--compacto p {
+    margin: 0;
+    color: var(--cor-texto);
+    font-size: var(--fs-400);
+  }
+
+  /* ---------- Chips de credencial ---------- */
+  .chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--sp-2);
+    margin-block-start: var(--sp-2);
+    padding: 0;
+    list-style: none;
+  }
+
+  .chip {
+    display: inline-flex;
+    align-items: center;
+    padding: var(--sp-1) var(--sp-3);
+    border-radius: var(--raio-pill);
+    border: var(--borda-sutil);
+    background-color: rgb(255 255 255 / 3%);
+    color: var(--cor-texto-suave);
+    font-size: var(--fs-200);
+    font-weight: var(--peso-medio);
+  }
+
+  /* ---------- Mural de provas (depoimentos em imagem) ---------- */
+  .mural-provas {
+    display: grid;
+    gap: var(--sp-4);
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0;
+    list-style: none;
+  }
+
+  @media (min-width: 48em) {
+    .mural-provas {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .mural-provas__item {
+    display: grid;
+    gap: var(--sp-2);
+  }
+
+  .mural-provas__item img {
+    inline-size: 100%;
+    block-size: auto;
+    border-radius: var(--raio-md);
+    border: var(--borda-sutil);
+    box-shadow: var(--sombra-sm);
+  }
+
+  .mural-provas__item figcaption {
+    color: var(--cor-texto-suave);
+    font-size: var(--fs-300);
+    text-align: center;
+  }
 }
