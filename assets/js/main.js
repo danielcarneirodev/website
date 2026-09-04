@@ -272,10 +272,37 @@
     trilho.addEventListener("touchend", retomarAutoPlay);
   };
 
+  /* ------------------------------------------------------------------ *
+   * Título da aba: chama de volta quando o usuário sai da página
+   * ------------------------------------------------------------------ */
+  const iniciarTituloAlternado = () => {
+    const tituloOriginal = document.title;
+    const mensagens = ["Volte aqui!", "Junte-se ao DEV RARO"];
+    let indiceAtual = 0;
+    let timer = null;
+
+    const alternar = () => {
+      document.title = mensagens[indiceAtual % mensagens.length];
+      indiceAtual++;
+    };
+
+    document.addEventListener("visibilitychange", () => {
+      if (document.hidden) {
+        indiceAtual = 0;
+        alternar();
+        timer = setInterval(alternar, 1500);
+      } else {
+        clearInterval(timer);
+        document.title = tituloOriginal;
+      }
+    });
+  };
+
   iniciarCabecalho();
   iniciarMenu();
   iniciarRevelacao();
   iniciarCtaFixo();
   iniciarCarrossel();
   iniciarAno();
+  iniciarTituloAlternado();
 })();
