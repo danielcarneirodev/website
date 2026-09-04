@@ -25,3 +25,6 @@ npm-debug.log*
 
 # Dependências (caso ferramentas de build sejam adicionadas no futuro)
 node_modules/
+
+# Scratch de execução do workflow subagent-driven-development (briefs/reports/diffs)
+.superpowers/
