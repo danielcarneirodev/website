@@ -114,6 +114,7 @@
   .comparativo {
     display: grid;
     gap: var(--sp-5);
+    margin-block-start: var(--sp-7);
   }
 
   @media (min-width: 48em) {
